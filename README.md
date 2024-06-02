@@ -13,13 +13,15 @@ Clone esse repositório:
 ` git clone https://github.com/bergsantana/bondy-desafio-fullstack.git`
 
 Da pasta raiz execute:
-`yarn lerna run start --scope=backend`
-`yarn lerna run dev --scope=fronted`
+- `yarn lerna run start --scope=backend`
+- `yarn lerna run dev --scope=fronted`
 
 ## Demo
 ### Front-End Desktop
 ![img](https://github.com/bergsantana/bondy-desafio-fullstack/blob/main/packages/frontend/imgs/desktop.gif?raw=true)
-
+###
+###
+###
 ### Front-End Mobile
 ![img](https://github.com/bergsantana/bondy-desafio-fullstack/blob/main/packages/frontend/imgs/mobile.gif?raw=true)
 

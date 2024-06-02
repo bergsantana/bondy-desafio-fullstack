@@ -2,13 +2,14 @@
 Desafio para vaga de fullstack
 ## Techs
 ### Server
-    - `Node.js
-    - `MongoDB`
-    - `Apollo GraphQL`
+- `Node.js`
+- `MongoDB`
+- `Apollo GraphQL`
 ### Front
-    - React
-    - Tailwind
+- `React`
+- `Tailwind`
 
+  
 ## Instruções
 Clone esse repositório:
 ` git clone https://github.com/bergsantana/bondy-desafio-fullstack.git`

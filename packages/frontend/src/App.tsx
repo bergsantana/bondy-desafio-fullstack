@@ -7,9 +7,7 @@ import React, { useState, createContext } from 'react'
 import { User } from './interfaces/user'
 
 
-type ContainerProps = { 
-  children: React.ReactNode
-}
+ 
 
 type TypExContextType = {
   user: User,
@@ -30,16 +28,19 @@ function App() {
 
   const goToLogin = () => navigate('/auth/login')
 
+  const goToHome = () => navigate('/')
+
+  const goToLanding =  () => navigate('/welcome')
+
   return (
     <UserContext.Provider value={ {user, setUser}}> 
-    <div>
-
-      <Header  routeClick={goToLogin}  currRouter=''/>
-      <div>      
-          <Outlet />
+      <div>
+        <Header  routeClick={[goToLogin, goToHome, goToLanding]}  currRouter=''/>
+        <div>      
+            <Outlet />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
     </UserContext.Provider>
  
   )

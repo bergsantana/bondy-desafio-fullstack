@@ -1,17 +1,24 @@
 import { AccountCircleRounded, MenuTwoTone } from "@mui/icons-material";
+import { useContext } from "react";
+import { UserContext } from "../../../App";
 
 interface Props {
-    routeClick : Function
+    routeClick : Function[]
     currRouter: string
 }
 
 
-export default function Header(props: Props){
+export default function Header(props: Props){ 
+    const { user  } = useContext(UserContext)
+    const onLoginClick = (): void => props.routeClick[0]()
+    const onHomeClick = () : void => user.name.length ?  props.routeClick[2]() : props.routeClick[1]()
 
-    const onLoginClick = (): void => props.routeClick()
+   
+
     return (
-        <header className="px-3 py-1 grid grid-cols-header  h-16 max-w-full shadow-md ">
+        <header className="px-3 py-1 grid grid-cols-3  h-16 max-w-full shadow-md sm:grid-cols-header">
             <img 
+                onClick={onHomeClick}
                 alt='bondy logo'  
                 src="https://bondy.com.br/wp-content/uploads/2023/09/logo-bondy-1200x425.png" 
                 className=" py-2 cursor-pointer m-2 object-scale-down max-h-full"
@@ -31,12 +38,14 @@ export default function Header(props: Props){
                     <button className="hover:text-[#342FEA]">Conteúdos</button>
                 </div>
             </div>
-            <div className="pt-3 justify-self-end text-[#342FEA]">
+            <div className="sm:pt-3  pt-4 justify-self-end text-[#342FEA]">
                 <button 
                     onClick={onLoginClick}
-                    className="flex gap-3 py-2 px-3" >
+                    className="flex gap-3 py-0 px-0 items-center " >
                     <AccountCircleRounded />
-                    <p>Login</p>
+                    <p className="font-bold">
+                        {user.name.length ? user.name : 'Login'}
+                    </p>
                 </button>
             </div>
             <button 

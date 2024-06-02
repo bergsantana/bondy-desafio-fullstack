@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { lineSpinner } from "ldrs"
 import api from "../../api/api"
 import { UserContext } from "../../App"
+import { useNavigate } from "react-router-dom"
 
 
 export default function Login( ) {
@@ -11,6 +12,8 @@ export default function Login( ) {
         company: '',
         password: ''
     }) 
+
+    const navigate = useNavigate() 
 
     const { user, setUser } = useContext(UserContext)
 
@@ -23,19 +26,20 @@ export default function Login( ) {
     
     lineSpinner.register()
 
-    const loading = () => {
+    const loading =   () => {
         setIsLoading(true)
         setTimeout(
             ()=>{
                 setIsLoading(false)
-            }, 5000
+                 
+            }, 3000
         )
     }
 
     const handleSubmit= async (e: React.SyntheticEvent) => {
         e.preventDefault()
         loading()
-        setLoginTry(true)        
+                 
         const form = e.target as typeof e.target & {
             emailInput: { value: string},
             passInput: { value: string}
@@ -43,14 +47,17 @@ export default function Login( ) {
         try {
            const useApi = api.useAPI()
            const res = await useApi.login(form.emailInput.value, form.passInput.value) 
-        
-            if (res.data) {
+           console.log('res', res)
+           setLoginTry(true)
+            if (res.data  ) {
+                console.log('res.data', res.data)
                 const {name, email, company, password} = res.data.data.login
                 console.log(name, email, company, password)
                 setLoginStatus(true)
                 setLoginTry(false)
                 updateUser({name, email, company, password})
                 setUser({name, email, company, password})
+                setTimeout(() => { if(name.length){ navigate('/welcome')}}, 2000)
             }
 
         }catch(e){
@@ -121,12 +128,15 @@ export default function Login( ) {
                                 border-2 rounded w-11/12
                                 "
                                 placeholder="Insira sua senha"
+                                type="password"
                                 name="passInput"
                             />
 
                             <button className="m-3 font-bold text-blue-500">Esqueceu sua senha?</button>
 
-                            <button type='submit'
+                            <button 
+                                
+                                type='submit'
                                 className="
                                 mx-3    
                                 bg-blue-600 w-11/12 rounded

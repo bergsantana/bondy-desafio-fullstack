@@ -12,7 +12,7 @@ Desafio de API GraphQL+FrontEnd para vaga de desenvolvedor fullstack
   
 ## Instruções
 Clone esse repositório:
-` git clone https://github.com/bergsantana/bondy-desafio-fullstack.git`
+- ` git clone https://github.com/bergsantana/bondy-desafio-fullstack.git`
 
 O script "start" do backend foi alterado para executar localmente no Windows.
 Da pasta raiz execute:

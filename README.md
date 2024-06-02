@@ -2,16 +2,18 @@
 Desafio para vaga de fullstack
 ## Techs
 ### Server
-    - Node
-    - Apollo GraphQL
+    - `Node.js
+    - `MongoDB`
+    - `Apollo GraphQL`
 ### Front
     - React
     - Tailwind
 
-## Getting Started
+## Instruções
 Clone esse repositório:
 ` git clone https://github.com/bergsantana/bondy-desafio-fullstack.git`
 
+O script "start" do backend foi alterado para executar localmente no Windows.
 Da pasta raiz execute:
 - `yarn lerna run start --scope=backend`
 - `yarn lerna run dev --scope=fronted`

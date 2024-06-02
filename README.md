@@ -1,4 +1,32 @@
 # bondy-desafio-fullstack
+Desafio para vaga de fullstack
+## Techs
+### Server
+    - Node
+    - Apollo GraphQL
+### Front
+    - React
+    - Tailwind
+
+## Getting Started
+Clone esse repositório:
+` git clone https://github.com/bergsantana/bondy-desafio-fullstack.git`
+
+Da pasta raiz execute:
+`yarn lerna run start --scope=backend`
+`yarn lerna run dev --scope=fronted`
+
+## Demo
+### Front-End Desktop
+![img](https://github.com/bergsantana/bondy-desafio-fullstack/blob/main/packages/frontend/imgs/desktop.gif?raw=true)
+
+### Front-End Mobile
+![img](https://github.com/bergsantana/bondy-desafio-fullstack/blob/main/packages/frontend/imgs/mobile.gif?raw=true)
+
+### API
+![img](https://github.com/bergsantana/bondy-desafio-fullstack/blob/main/packages/frontend/imgs/api-call.jpg?raw=true)
+
+# Desafio Proposto
 
 ## Estrutura do repositório:
 Este projeto é um monorepo construído com Lerna (para saber mais => https://lerna.js.org/)

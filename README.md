@@ -1,10 +1,10 @@
 # bondy-desafio-fullstack
-Desafio para vaga de fullstack
+Desafio de API GraphQL+FrontEnd para vaga de desenvolvedor fullstack
 ## Techs
 ### Server
 - `Node.js`
 - `MongoDB`
-- `Apollo GraphQL`
+- `Apollo`
 ### Front
 - `React`
 - `Tailwind`

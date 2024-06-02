@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import { User } from '../models/User'
 import bcrypt from 'bcrypt'
 
-export const connection = async () => {
+export const connection = async ( ) => {
   const connState = mongoose.connection.readyState
   if (connState.valueOf() !== 1) {
     await mongoose.connect(
@@ -16,6 +16,9 @@ export const connection = async () => {
       { upsert: true }
     )
   }
+  
+  
+
 }
 
 const userMock = {

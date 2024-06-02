@@ -1,7 +1,10 @@
 import gql from 'graphql-tag'
+import user from './user' 
+ 
 
 export default gql`
   type Mutation {
-    mutationTest(test: Boolean): Boolean
-  }
+    login(email: String!, password: String!):  User 
+}
+
 `

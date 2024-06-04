@@ -47,12 +47,12 @@ export default function Login( ) {
         try {
            const useApi = api.useAPI()
            const res = await useApi.login(form.emailInput.value, form.passInput.value) 
-           console.log('res', res)
+           //console.log('res', res)
            setLoginTry(true)
             if (res.data  ) {
-                console.log('res.data', res.data)
+                //console.log('res.data', res.data)
                 const {name, email, company, password} = res.data.data.login
-                console.log(name, email, company, password)
+                //console.log(name, email, company, password)
                 setLoginStatus(true)
                 setLoginTry(false)
                 updateUser({name, email, company, password})
